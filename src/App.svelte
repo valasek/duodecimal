@@ -10,8 +10,11 @@
   let set: "XE" | "Glyphe" = "XE";
   let input = "";
 
-  const controlButtonClasses =
-    "rounded-2xl border border-slate-500/20 bg-white/90 px-3 py-2 text-sm font-medium text-slate-900 shadow-sm transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-slate-500/40 dark:bg-slate-800/90 dark:text-slate-100 dark:hover:bg-slate-700/80";
+  const accentControlButtonClasses =
+    "rounded-2xl border border-rose-300/60 bg-rose-200/90 px-4 py-3 text-2xl font-semibold text-rose-950 shadow-sm transition hover:bg-rose-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-400 dark:border-rose-400/40 dark:bg-rose-500/80 dark:text-slate-100 dark:hover:bg-rose-500";
+
+  const secondaryControlButtonClasses =
+    "rounded-xl border border-slate-400/30 bg-slate-200/60 px-3 py-2 text-sm font-medium text-slate-600 shadow-sm transition hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-slate-500/30 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:bg-slate-700/80";
 
   function pressDigit(d: string) {
     input += d;
@@ -89,22 +92,22 @@
           Fast, offline-ready base-12 arithmetic.
         </p>
       </div>
-      <div class="flex flex-wrap justify-center gap-2">
+      <div class="flex w-full flex-col items-start gap-2 sm:flex-row sm:items-center">
         <button
           type="button"
-          class={controlButtonClasses}
-          on:click={clearAll}
-          aria-label="Clear all"
-        >
-          AC
-        </button>
-        <button
-          type="button"
-          class={controlButtonClasses}
+          class={secondaryControlButtonClasses}
           on:click={switchSet}
           aria-label="Toggle digit set"
         >
           {set === "XE" ? "Digits: X, E" : "Digits: A, B"}
+        </button>
+        <button
+          type="button"
+          class={`${accentControlButtonClasses} sm:ml-auto`}
+          on:click={clearAll}
+          aria-label="Clear all"
+        >
+          AC
         </button>
       </div>
     </div>

@@ -21,7 +21,7 @@
   export let set: "XE" | "Glyphe" = "XE";
 
   const digitClasses =
-    "rounded-2xl border border-slate-500/20 bg-white/90 px-4 py-3 text-2xl font-semibold text-slate-900 shadow-sm transition hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-slate-500/40 dark:bg-slate-800/90 dark:text-slate-100 dark:hover:bg-slate-700/80";
+    "rounded-2xl border border-slate-500/30 bg-slate-200/80 px-4 py-3 text-2xl font-semibold text-slate-800 shadow-sm transition hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-slate-500/40 dark:bg-slate-800/90 dark:text-slate-100 dark:hover:bg-slate-700/80";
   const opClasses =
     "rounded-2xl border border-amber-400/40 bg-amber-400/80 px-4 py-3 text-2xl font-semibold text-amber-950 shadow-sm transition hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200 dark:border-amber-300/40 dark:bg-amber-500/80";
   const commandClasses =
