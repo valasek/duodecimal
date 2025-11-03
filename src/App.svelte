@@ -80,16 +80,16 @@
 
 <main class="mx-auto flex min-h-screen max-w-md flex-col gap-6 px-4 py-10 sm:py-16">
   <section class="flex flex-col gap-4 rounded-3xl border border-slate-500/20 bg-white/90 p-5 shadow-2xl shadow-slate-900/10 backdrop-blur dark:border-slate-500/30 dark:bg-slate-900/80">
-    <div class="flex flex-wrap items-start justify-between gap-3">
-      <div class="space-y-1">
-        <h1 class="text-xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <div class="space-y-2">
+        <h1 class="text-3xl font-semibold tracking-tight text-slate-900 dark:text-slate-100">
           Duodecimal Calculator
         </h1>
-        <p class="text-sm text-slate-600 dark:text-slate-300">
+        <p class="text-base text-slate-600 dark:text-slate-300">
           Fast, offline-ready base-12 arithmetic.
         </p>
       </div>
-      <div class="flex flex-wrap gap-2">
+      <div class="flex flex-wrap justify-center gap-2">
         <button
           type="button"
           class={controlButtonClasses}
@@ -121,6 +121,6 @@
   </section>
 
   <footer class="text-center text-xs text-slate-500 dark:text-slate-400">
-    Built with Svelte, Tailwind, and rational arithmetic for dozenal fans.
+    Built with ❤️ by <a class="font-medium text-sky-600 underline hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300" href="https://www.stanislavvalasek.com/en">Stanislav Valasek</a> using Svelte, Tailwind, and rational arithmetic for dozenal fans.
   </footer>
 </main>
