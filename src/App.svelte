@@ -13,9 +13,6 @@
   let showAbout = false;
   let aboutDialog: HTMLElement | null = null;
 
-  const accentControlButtonClasses =
-    "rounded-2xl border border-rose-300/60 bg-rose-200/90 px-4 py-3 text-2xl font-semibold text-rose-950 shadow-sm transition hover:bg-rose-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-400 dark:border-rose-400/40 dark:bg-rose-500/80 dark:text-slate-100 dark:hover:bg-rose-500";
-
   const secondaryControlButtonClasses =
     "rounded-xl border border-slate-400/30 bg-slate-200/60 px-3 py-2 text-sm font-medium text-slate-600 shadow-sm transition hover:bg-slate-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-500 dark:border-slate-500/30 dark:bg-slate-800/70 dark:text-slate-300 dark:hover:bg-slate-700/80";
 
@@ -137,14 +134,6 @@
         >
           {set === "XE" ? "Digits: X, E" : "Digits: A, B"}
         </button>
-        <button
-          type="button"
-          class={`${accentControlButtonClasses} sm:ml-auto`}
-          on:click={clearAll}
-          aria-label="Clear all"
-        >
-          AC
-        </button>
       </div>
     </div>
 
@@ -153,6 +142,7 @@
     <Keypad
       on:digit={(e) => pressDigit(e.detail)}
       on:op={(e) => chooseOp(e.detail)}
+      on:clear={clearAll}
       on:commit={commit}
       on:equals={equals}
       {set}
@@ -160,7 +150,9 @@
   </section>
 
   <footer class="text-center text-xs text-slate-500 dark:text-slate-400">
-    Built with ❤️ by <a class="font-medium text-sky-600 underline hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300" href="https://www.stanislavvalasek.com/en">Stanislav Valasek</a> using Svelte, Tailwind, and rational arithmetic for dozenal fans.
+    Built with ❤️ by <a class="font-medium text-sky-600 underline hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300" href="https://www.stanislavvalasek.com/en">Stanislav Valasek</a> using AI for dozenal fans.<br/>
+    See the <a class="font-medium text-sky-600 underline hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300" href="https://github.com/valasek?tab=repositories">
+    source code</a>.
   </footer>
 </main>
 
@@ -234,8 +226,20 @@
           techniques, and even proposals for calendar reform or timekeeping rooted in twelvefold symmetry.
         </p>
         <p>
-          Curious to dig deeper? Browse the Dozenal Society of America’s resources or the extensive literature collected on
-          duodecimal’s Wikipedia entry to find primers, conversion charts, and historical documents supporting this elegant
+          Curious to dig deeper? Browse the <a
+            class="font-medium text-sky-600 underline hover:text-sky-500 dark:text-sky-400 dark:hover:text-sky-300"
+            href="https://dozenal.org/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Dozenal Society of America
+          </a>’s resources or the extensive literature collected on
+          <a
+            class="font-medium text-sky-600 underline hover:text-sky-500 dark:text-slate-400 dark:hover:text-slate-300"
+            href="https://en.wikipedia.org/wiki/Duodecimal"
+            target="_blank"
+            rel="noreferrer">
+          duodecimal’s Wikipedia entry</a> to find primers, conversion charts, and historical documents supporting this elegant
           number system.
         </p>
       </div>

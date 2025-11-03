@@ -2,7 +2,7 @@
   import { createEventDispatcher } from "svelte";
 
   type Operator = "+" | "-" | "×" | "÷";
-  type Command = "commit" | "equals";
+  type Command = "commit" | "equals" | "clear";
 
   interface KeyBase {
     id: string;
@@ -26,6 +26,8 @@
     "rounded-2xl border border-amber-400/40 bg-amber-400/80 px-4 py-3 text-2xl font-semibold text-amber-950 shadow-sm transition hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200 dark:border-amber-300/40 dark:bg-amber-500/80";
   const commandClasses =
     "rounded-2xl border border-slate-500/20 bg-slate-900/90 px-4 py-3 text-xl font-semibold text-white shadow-sm transition hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 dark:border-slate-500/40";
+  const clearClasses =
+    "rounded-2xl border border-rose-300/60 bg-rose-200/90 px-4 py-3 text-xl font-semibold text-rose-950 shadow-sm transition hover:bg-rose-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-400 dark:border-rose-400/40 dark:bg-rose-500/80 dark:text-slate-100 dark:hover:bg-rose-500";
 
   $: ten = set === "XE" ? "X" : "A";
   $: eleven = set === "XE" ? "E" : "B";
@@ -47,13 +49,14 @@
     { id: "digit-eleven", type: "digit", label: eleven, value: eleven },
     { id: "digit-0", type: "digit", label: "0", value: "0" },
     { id: "op-divide", type: "op", label: "÷", value: "÷" },
-    { id: "command-enter", type: "command", label: "Enter", action: "commit", spanClass: "col-span-2" },
+    { id: "command-clear", type: "command", label: "AC", action: "clear", spanClass: "col-span-2" },
     { id: "command-equals", type: "command", label: "=", action: "equals", spanClass: "col-span-2" }
   ] satisfies Key[];
 
   function classFor(key: Key) {
     if (key.type === "digit") return digitClasses;
     if (key.type === "op") return opClasses;
+    if (key.action === "clear") return clearClasses;
     return commandClasses;
   }
 
@@ -70,6 +73,8 @@
       dispatch("op", key.value);
     } else if (key.action === "commit") {
       dispatch("commit");
+    } else if (key.action === "clear") {
+      dispatch("clear");
     } else {
       dispatch("equals");
     }
