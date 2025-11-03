@@ -4,7 +4,8 @@ Offline-ready web & mobile calculator for base-12 arithmetic.
 
 ## Local development
 
-All code is written by AI, using Antropic Codex by my guidance.
+All code is written by AI, using Antropic Codex under my guidance.
+Codex configuration is stored in file [CODEX.md](CODEX.md).
 
 ### Key product choices
 
