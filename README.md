@@ -2,19 +2,20 @@
 
 Offline-ready web & mobile calculator for base-12 arithmetic.
 
-# Local development
+## Local development
 
-# one-time
-npm i -D svelte-preprocess
+All code is written by AI, using Antropic Codex by my guidance.
 
-# dev
-npm run dev
+### Key product choices
 
-# tests
-npm test
+Digit sets toggle: support both classic X,E and A, B. No glyphs are used at the moment.
 
-# production build preview
-npm run build && npm run preview
+Input model: keep an internal rational representation (numerator/denominator bigint).
+
+Formatting: convert rational → dozenal string only at render time.
+
+Keyboard & a11y: full keyboard support, ARIA roles for buttons, big tap targets.
+
 
 # Tech stack
 
@@ -27,21 +28,20 @@ Styling: Tailwind CSS
 PWA: vite-plugin-pwa (Workbox under the hood)
 
 Testing:
-
-Unit: Vitest
-
-Property-based: fast-check (great for number systems)
-
-E2E/UI: Playwright
+- Unit: Vitest
+- Property-based: fast-check (great for number systems)
+- E2E/UI: Playwright
 
 Precision math: fraction.js (rational arithmetic) or roll your own tiny rational type with bigint
 
-# Key product choices
+# Usefull commands - start
+npm i -D svelte-preprocess
 
-Digit sets toggle: support both classic X,E and glyphs ↊,↋.
+## dev
+npm run dev
 
-Input model: keep an internal rational representation (numerator/denominator bigint).
+## tests
+npm test
 
-Formatting: convert rational → dozenal string only at render time.
-
-Keyboard & a11y: full keyboard support, ARIA roles for buttons, big tap targets.
+## production build preview
+npm run build && npm run preview

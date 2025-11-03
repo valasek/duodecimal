@@ -27,8 +27,8 @@
   const commandClasses =
     "rounded-2xl border border-slate-500/20 bg-slate-900/90 px-4 py-3 text-xl font-semibold text-white shadow-sm transition hover:bg-slate-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400 dark:border-slate-500/40";
 
-  $: ten = set === "XE" ? "X" : "↊";
-  $: eleven = set === "XE" ? "E" : "↋";
+  $: ten = set === "XE" ? "X" : "A";
+  $: eleven = set === "XE" ? "E" : "B";
 
   $: keypad = [
     { id: "digit-1", type: "digit", label: "1", value: "1" },

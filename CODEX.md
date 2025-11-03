@@ -6,7 +6,7 @@
 - **Stack**: Svelte + Vite, TypeScript, Tailwind, PWA via `vite-plugin-pwa`.
 
 ## Working Agreements
-- Keep output in ASCII unless existing file uses Unicode (duodecimal glyphs ↊, ↋ are OK when already present).
+- Keep output in ASCII unless existing file uses Unicode.
 - Add comments only when they clarify non-obvious logic.
 - Avoid destructive git commands (`reset --hard`, `checkout --`) unless explicitly requested.
 
@@ -19,7 +19,7 @@
 ## Coding Guidelines
 - Use TypeScript and Svelte conventions already in `src/`.
 - Preserve the rational-number core; internal state should remain fractional (`bigint` numerator/denominator) until render.
-- Ensure digit toggles support both classic (`X,E`) and glyph (`↊, ↋`) modes.
+- Ensure digit toggles support both classic (`X,E`) and glyph (`A, B`) modes.
 - Maintain accessibility: keyboard support, ARIA roles, large tap targets.
 
 ## Pull Request Expectations

@@ -1,7 +1,7 @@
 export type DigitSet = 'XE' | 'Glyphe';
 const sets = {
     XE: { ten: 'X', eleven: 'E' },
-    Glyphe: { ten: '↊', eleven: '↋' }
+    Glyphe: { ten: 'A', eleven: 'B' }
 } as const;
 
 

@@ -38,8 +38,8 @@
       const val = Q.q(
         BigInt(
           input
-            .replaceAll("↊", "A")
-            .replaceAll("↋", "B")
+            .replaceAll("A", "A")
+            .replaceAll("B", "B")
             .replaceAll("X", "A")
             .replaceAll("E", "B")
             .split("")
@@ -104,7 +104,7 @@
           on:click={switchSet}
           aria-label="Toggle digit set"
         >
-          {set === "XE" ? "Digits: X, E" : "Digits: ↊, ↋"}
+          {set === "XE" ? "Digits: X, E" : "Digits: A, B"}
         </button>
       </div>
     </div>
